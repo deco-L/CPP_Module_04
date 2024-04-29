@@ -6,7 +6,7 @@
 /*   By: csakamot <csakamot@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 14:21:20 by csakamot          #+#    #+#             */
-/*   Updated: 2024/04/29 01:23:39 by csakamot         ###   ########.fr       */
+/*   Updated: 2024/04/29 01:43:39 by csakamot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ type(type) {
 }
 
 Animal::~Animal(void) {
-  std::cout << "\e[1;96mAnimal" << type << ">byebye~."
+  std::cout << "Animal\e[1;96m" << type << ">byebye~."
             << std::endl;
 }
 

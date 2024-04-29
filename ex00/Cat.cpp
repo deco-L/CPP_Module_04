@@ -6,7 +6,7 @@
 /*   By: csakamot <csakamot@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 14:21:20 by csakamot          #+#    #+#             */
-/*   Updated: 2024/04/29 01:20:39 by csakamot         ###   ########.fr       */
+/*   Updated: 2024/04/29 01:40:48 by csakamot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ Cat& Cat::operator=(const Cat& obj) {
     this->type = obj.type;
   }
   else
-    std::cout << "\e[1;31mAnimal Error: "
+    std::cout << "\e[1;31mCat Error: "
               << "Attempted self-assignment in copy assignment operator"
               << "\e[0m"
               << std::endl;
