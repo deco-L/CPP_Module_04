@@ -6,34 +6,35 @@
 /*   By: csakamot <csakamot@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 14:21:20 by csakamot          #+#    #+#             */
-/*   Updated: 2024/04/29 01:20:45 by csakamot         ###   ########.fr       */
+/*   Updated: 2024/05/08 12:02:03 by csakamot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
 Dog::Dog(void) :
-Animal("cat") {
+Animal("dog") {
   std::cout << "\e[1;92mDog default constructor called.\e[0m" << std::endl
-            << "Cat type\e[1;96m" << type << "\e[0m"
+            << "Animal type \e[1;96m" << type << "\e[0m"
             << std::endl;
 }
 
 Dog::Dog(const Dog& obj) :
-Animal("cat") {
+Animal("dog") {
   *this = obj;
   std::cout << "\e[1;92mDog copy constructor called.\e[0m" << std::endl
-            << "Cat type\e[1;96m" << type << "\e[0m"
+            << "Animal type \e[1;96m" << type << "\e[0m"
             << std::endl;
 }
 
 Dog::~Dog(void) {
-  std::cout << "\e[1;96mAnimal" << type << ">byebye~."
+  std::cout << "\e[1;92mDog deconstructor called.\e[0m" << std::endl
+            << "Animal \e[1;96m" << type << "\e[0m>byebye~."
             << std::endl;
 }
 
-void Dog::makeSound(void) {
-  std::cout << type << ">Bowwow~" << std::endl;
+void Dog::makeSound(void) const {
+  std::cout << "Animal " << type << ">Bowwow~" << std::endl;
 }
 
 Dog& Dog::operator=(const Dog& obj) {

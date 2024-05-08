@@ -6,12 +6,12 @@
 #    By: csakamot <csakamot@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/01 14:21:20 by csakamot          #+#    #+#              #
-#    Updated: 2024/04/29 01:24:28 by csakamot         ###   ########.fr        #
+#    Updated: 2024/05/08 12:06:47 by csakamot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 ##----Executable File Name-----##
-NAME			= ClapTrap
+NAME			= Polymorphism
 ##-----------------------------##
 
 ##-----Directory Location------##
@@ -23,7 +23,7 @@ OBJDIR			= objs/
 ##-----------------------------##
 
 ##------------Srcs-------------##
-MAINSRC			=	main.cpp Animal.cpp Dog.cpp Cat.cpp
+MAINSRC			=	main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
 
 SRCS			= $(addprefix $(SRCDIR), ${MAINSRC})
 ##-----------------------------##

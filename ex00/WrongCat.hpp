@@ -6,12 +6,12 @@
 /*   By: csakamot <csakamot@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 14:21:20 by csakamot          #+#    #+#             */
-/*   Updated: 2024/04/29 01:35:07 by csakamot         ###   ########.fr       */
+/*   Updated: 2024/05/08 12:06:17 by csakamot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#ifndef WrongCAT_HPP
+#ifndef WRONGCAT_HPP
 
 #include "WrongAnimal.hpp"
 
@@ -21,7 +21,7 @@ public:
   WrongCat( const WrongCat& obj );
   ~WrongCat( void );
 
-  void  makeSound( void );
+  void  makeSound( void ) const;
 
   WrongCat&  operator=( const WrongCat& obj );
 };

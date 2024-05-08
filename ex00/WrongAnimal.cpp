@@ -6,7 +6,7 @@
 /*   By: csakamot <csakamot@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 14:21:20 by csakamot          #+#    #+#             */
-/*   Updated: 2024/04/29 01:38:46 by csakamot         ###   ########.fr       */
+/*   Updated: 2024/05/08 12:07:47 by csakamot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@ WrongAnimal::WrongAnimal(void) :
 type("none") {
   std::cout << "\e[1;92mWrongAnimal default constructor called.\e[0m"
             << std::endl
-            << "WrongAnimal type\e[1;96m" << type << "\e[0m"
+            << "WrongAnimal type \e[1;96m" << type << "\e[0m"
             << std::endl;
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal& obj) {
   *this = obj;
   std::cout << "\e[1;92mWrongAnimal copy constructor called.\e[0m" << std::endl
-            << "WrongAnimal type\e[1;96m" << type << "\e[0m"
+            << "WrongAnimal type \e[1;96m" << type << "\e[0m"
             << std::endl;
 }
 
@@ -33,16 +33,16 @@ type(type) {
 }
 
 WrongAnimal::~WrongAnimal(void) {
-  std::cout << "\e[1;96mWrongAnimal" << type << ">byebye~."
+  std::cout << "\e[1;92mWrongAnimal deconstructor called.\e[0m" << std::endl
+            << "WrongAnimal \e[1;96m" << type << "\e[0m>byebye~."
             << std::endl;
 }
 
 void  WrongAnimal::makeSound(void) const {
-  std::cout << type << ">..." << std::endl;
+  std::cout << "WrongAnimal " << type << ">..." << std::endl;
 }
 
 std::string  WrongAnimal::getType(void) const {
-  std::cout << "WrongAnimal type\e[1;96m is " << type << std::endl;
   return (type);
 }
 

@@ -6,7 +6,7 @@
 /*   By: csakamot <csakamot@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 14:21:20 by csakamot          #+#    #+#             */
-/*   Updated: 2024/04/29 01:20:42 by csakamot         ###   ########.fr       */
+/*   Updated: 2024/05/08 11:49:14 by csakamot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ class Cat : public Animal {
 public:
   Cat();
   Cat( const Cat& obj );
-  ~Cat( void );
+  virtual ~Cat( void );
 
-  void  makeSound( void );
+  void  makeSound( void ) const;
 
   Cat&  operator=( const Cat& obj );
 };

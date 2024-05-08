@@ -6,7 +6,7 @@
 /*   By: csakamot <csakamot@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 14:21:20 by csakamot          #+#    #+#             */
-/*   Updated: 2024/04/29 01:43:39 by csakamot         ###   ########.fr       */
+/*   Updated: 2024/05/08 12:02:10 by csakamot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 Animal::Animal(void) :
 type("none") {
   std::cout << "\e[1;92mAnimal default constructor called.\e[0m" << std::endl
-            << "Animal type\e[1;96m" << type << "\e[0m"
+            << "Animal type\e[1;96m " << type << "\e[0m"
             << std::endl;
 }
 
 Animal::Animal(const Animal& obj) {
   *this = obj;
   std::cout << "\e[1;92mAnimal copy constructor called.\e[0m" << std::endl
-            << "Animal type\e[1;96m" << type << "\e[0m"
+            << "Animal type\e[1;96m " << type << "\e[0m"
             << std::endl;
 }
 
@@ -32,16 +32,16 @@ type(type) {
 }
 
 Animal::~Animal(void) {
-  std::cout << "Animal\e[1;96m" << type << ">byebye~."
+  std::cout << "\e[1;92mAnimal deconstructor called.\e[0m" << std::endl
+            << "Animal \e[1;96m" << type << "\e[0m> byebye~."
             << std::endl;
 }
 
 void  Animal::makeSound(void) const {
-  std::cout << type << ">..." << std::endl;
+  std::cout << "Animal " << type << ">..." << std::endl;
 }
 
 std::string  Animal::getType(void) const {
-  std::cout << "Animal type\e[1;96m is " << type << std::endl;
   return (type);
 }
 
