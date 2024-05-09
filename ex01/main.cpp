@@ -6,7 +6,7 @@
 /*   By: csakamot <csakamot@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 14:21:20 by csakamot          #+#    #+#             */
-/*   Updated: 2024/05/08 12:05:25 by csakamot         ###   ########.fr       */
+/*   Updated: 2024/05/09 15:09:52 by csakamot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,29 +37,15 @@ static void draw_terminal_line() {
 
 int main(void) {
   draw_terminal_line();
-  const Animal* meta = new Animal();
-  const Animal* j = new Dog();
-  const Animal* i = new Cat();
-  std::cout << meta->getType() << " " << std::endl;
-  std::cout << j->getType() << " " << std::endl;
-  std::cout << i->getType() << " " << std::endl;
-  i->makeSound(); //will output the cat sound!
-  j->makeSound();
-  meta->makeSound();
-  delete meta;
-  delete j;
-  delete i;
-  draw_terminal_line();
-
-  draw_terminal_line();
-  const WrongAnimal*  metameta = new WrongAnimal();
-  const WrongAnimal*  k = new WrongCat();
-  std::cout << metameta->getType() << " " << std::endl;
-  std::cout << k->getType() << " " << std::endl;
-  metameta->makeSound();
-  k->makeSound();
-  delete metameta;
-  delete k;
+  Animal  *herdAnimal[HERD];
+  for (int i = 0; i < HERD; i++) {
+    if (i % 2 == 0)
+      herdAnimal[i] = new Dog();
+    else
+      herdAnimal[i] = new Cat();
+  }
+  for (int j = 0; j < HERD; j++)
+    delete herdAnimal[j];
   draw_terminal_line();
   return (EXIT_SUCCESS);
 }

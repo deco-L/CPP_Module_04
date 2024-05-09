@@ -6,7 +6,7 @@
 /*   By: csakamot <csakamot@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 14:21:20 by csakamot          #+#    #+#             */
-/*   Updated: 2024/05/08 12:02:03 by csakamot         ###   ########.fr       */
+/*   Updated: 2024/05/09 14:43:45 by csakamot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 Dog::Dog(void) :
 Animal("dog") {
+  this->brain = new Brain;
   std::cout << "\e[1;92mDog default constructor called.\e[0m" << std::endl
             << "Animal type \e[1;96m" << type << "\e[0m"
             << std::endl;
@@ -21,6 +22,7 @@ Animal("dog") {
 
 Dog::Dog(const Dog& obj) :
 Animal("dog") {
+  this->brain = new Brain;
   *this = obj;
   std::cout << "\e[1;92mDog copy constructor called.\e[0m" << std::endl
             << "Animal type \e[1;96m" << type << "\e[0m"
@@ -28,6 +30,7 @@ Animal("dog") {
 }
 
 Dog::~Dog(void) {
+  delete this->brain;
   std::cout << "\e[1;92mDog deconstructor called.\e[0m" << std::endl
             << "Animal \e[1;96m" << type << "\e[0m>byebye~."
             << std::endl;
@@ -40,11 +43,12 @@ void Dog::makeSound(void) const {
 Dog& Dog::operator=(const Dog& obj) {
   if (this != &obj) {
     this->type = obj.type;
+    this->brain = obj.brain;
   }
   else
     std::cout << "\e[1;31mAnimal Error: "
               << "Attempted self-assignment in copy assignment operator"
               << "\e[0m"
               << std::endl;
-  return *this;
+  return (*this);
 }

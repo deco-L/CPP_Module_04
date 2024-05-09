@@ -6,7 +6,7 @@
 /*   By: csakamot <csakamot@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 14:21:20 by csakamot          #+#    #+#             */
-/*   Updated: 2024/05/08 12:12:25 by csakamot         ###   ########.fr       */
+/*   Updated: 2024/05/09 13:47:39 by csakamot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,5 @@ WrongCat& WrongCat::operator=(const WrongCat& obj) {
               << "Attempted self-assignment in copy assignment operator"
               << "\e[0m"
               << std::endl;
-  return *this;
+  return (*this);
 }

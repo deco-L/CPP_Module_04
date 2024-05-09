@@ -6,14 +6,17 @@
 /*   By: csakamot <csakamot@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 14:21:20 by csakamot          #+#    #+#             */
-/*   Updated: 2024/05/08 11:45:08 by csakamot         ###   ########.fr       */
+/*   Updated: 2024/05/09 15:09:22 by csakamot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #ifndef ANIMAL_HPP
+#define ANIMAL_HPP
 
 #include <iostream>
+
+#define HERD 4
 
 class Animal {
 protected:
