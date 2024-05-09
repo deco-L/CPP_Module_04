@@ -6,12 +6,12 @@
 #    By: csakamot <csakamot@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/01 14:21:20 by csakamot          #+#    #+#              #
-#    Updated: 2024/05/09 15:08:22 by csakamot         ###   ########.fr        #
+#    Updated: 2024/05/09 16:20:26 by csakamot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 ##----Executable File Name-----##
-NAME			= Fire
+NAME			= Memory_check
 ##-----------------------------##
 
 ##-----Directory Location------##
