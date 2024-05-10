@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: csakamot <csakamot@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 14:21:20 by csakamot          #+#    #+#             */
-/*   Updated: 2024/05/10 13:28:19 by csakamot         ###   ########.fr       */
+/*   Updated: 2024/05/10 14:17:33 by csakamot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <cstdlib>
+#ifndef CHARACTER_HPP
+#define CHARACTER_HPP
 
-int main(void) {
-IMateriaSource* src = new MateriaSource();
-src->learnMateria(new Ice());
-src->learnMateria(new Cure());
-ICharacter* me = new Character("me");
-AMateria* tmp;
-tmp = src->createMateria("ice");
-me->equip(tmp);
-tmp = src->createMateria("cure");
-me->equip(tmp);
-ICharacter* bob = new Character("bob");
-me->use(0, *bob);
-me->use(1, *bob);
-delete bob;
-delete me;
-delete src;
-  return (EXIT_SUCCESS);
-}
+#include <iostream>
+#include "Materia.hpp"
+
+class ICharacter {
+public:
+  virtual ~ICharacter() {};
+
+  virtual const std::string& getName( void ) const = 0;
+  virtual void  equip( AMateria* m ) = 0;
+  virtual void  unequip( int idx ) = 0;
+  virtual void  use( int idx, ICharacter& target ) = 0;
+};
+
+#endif

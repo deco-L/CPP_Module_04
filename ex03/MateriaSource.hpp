@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: csakamot <csakamot@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 14:21:20 by csakamot          #+#    #+#             */
-/*   Updated: 2024/05/10 13:28:19 by csakamot         ###   ########.fr       */
+/*   Updated: 2024/05/10 14:03:35 by csakamot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <cstdlib>
+#ifndef MATERIASOURCE_HPP
+#define MATERIASOURCE_HPP
 
-int main(void) {
-IMateriaSource* src = new MateriaSource();
-src->learnMateria(new Ice());
-src->learnMateria(new Cure());
-ICharacter* me = new Character("me");
-AMateria* tmp;
-tmp = src->createMateria("ice");
-me->equip(tmp);
-tmp = src->createMateria("cure");
-me->equip(tmp);
-ICharacter* bob = new Character("bob");
-me->use(0, *bob);
-me->use(1, *bob);
-delete bob;
-delete me;
-delete src;
-  return (EXIT_SUCCESS);
-}
+#include <iostream>
+#include "AMateria.hpp"
+
+class IMateriaSource {
+public:
+  virtual ~IMateriaSource() {};
+
+  virtual void  learnMateria( AMateria* ) = 0;
+  virtual AMateria* createMateria( const std::string& type ) = 0;
+};
+
+#endif
