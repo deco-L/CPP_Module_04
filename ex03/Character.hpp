@@ -6,24 +6,32 @@
 /*   By: csakamot <csakamot@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 14:21:20 by csakamot          #+#    #+#             */
-/*   Updated: 2024/05/10 14:17:33 by csakamot         ###   ########.fr       */
+/*   Updated: 2024/05/18 12:42:54 by csakamot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHARACTER_HPP
 #define CHARACTER_HPP
 
-#include <iostream>
-#include "Materia.hpp"
+#include "ICharacter.hpp"
 
-class ICharacter {
+class Character : public ICharacter {
+private:
+  std::string name;
+  AMateria    *slot[4];
+
 public:
-  virtual ~ICharacter() {};
+  Character( void );
+  Character( const std::string& name );
+  Character( const Character& obj );
+  ~Character( void );
 
-  virtual const std::string& getName( void ) const = 0;
-  virtual void  equip( AMateria* m ) = 0;
-  virtual void  unequip( int idx ) = 0;
-  virtual void  use( int idx, ICharacter& target ) = 0;
+  const std::string& getName( void ) const;
+  void  equip( AMateria* m );
+  void  unequip( int idx );
+  void  use( int idx, ICharacter& target );
+
+  Character&  operator=( const Character& obj );
 };
 
 #endif

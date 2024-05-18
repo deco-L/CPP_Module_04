@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Materia.hpp                                        :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: csakamot <csakamot@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 14:21:20 by csakamot          #+#    #+#             */
-/*   Updated: 2024/05/10 14:29:15 by csakamot         ###   ########.fr       */
+/*   Updated: 2024/05/14 14:54:35 by csakamot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MATERIA_HPP
-#define MATERIA_HPP
+#ifndef AMATERIA_HPP
+#define AMATERIA_HPP
 
 #include <iostream>
-#include "Character.hpp"
+#include "ICharacter.hpp"
 
 class AMateria {
 protected:
@@ -26,8 +26,8 @@ public:
   AMateria( const AMateria& obj );
   ~AMateria( void );
 
-  std::string&  getType() const;
-  virtual AMateria* clone() const = 0;
+  const std::string&  getType( void ) const;
+  virtual AMateria* clone( void ) const = 0;
   virtual void  use( ICharacter& target );
 
   AMateria& operator=( const AMateria& obj );

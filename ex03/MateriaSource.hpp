@@ -6,22 +6,28 @@
 /*   By: csakamot <csakamot@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 14:21:20 by csakamot          #+#    #+#             */
-/*   Updated: 2024/05/10 14:03:35 by csakamot         ###   ########.fr       */
+/*   Updated: 2024/05/18 13:06:20 by csakamot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MATERIASOURCE_HPP
 #define MATERIASOURCE_HPP
 
-#include <iostream>
-#include "AMateria.hpp"
+#include "IMateriaSource.hpp"
 
-class IMateriaSource {
+class MateriaSource : public IMateriaSource {
+private:
+  AMateria  *slot[4];
+
 public:
-  virtual ~IMateriaSource() {};
+  MateriaSource( void );
+  MateriaSource( const MateriaSource& obj );
+  ~MateriaSource( void );
 
-  virtual void  learnMateria( AMateria* ) = 0;
-  virtual AMateria* createMateria( const std::string& type ) = 0;
+  void  learnMateria( AMateria* );
+  AMateria* createMateria( const std::string& type );
+
+  MateriaSource&  operator=( const MateriaSource& obj );
 };
 
 #endif
