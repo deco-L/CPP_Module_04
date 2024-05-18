@@ -6,7 +6,7 @@
 /*   By: csakamot <csakamot@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 14:21:20 by csakamot          #+#    #+#             */
-/*   Updated: 2024/05/14 14:54:35 by csakamot         ###   ########.fr       */
+/*   Updated: 2024/05/18 18:11:46 by csakamot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 #include <iostream>
 #include "ICharacter.hpp"
 
-class AMateria {
+class AMateria
+{
 protected:
   std::string type;
 

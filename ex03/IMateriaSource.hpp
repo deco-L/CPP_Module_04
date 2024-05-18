@@ -6,7 +6,7 @@
 /*   By: csakamot <csakamot@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 14:21:20 by csakamot          #+#    #+#             */
-/*   Updated: 2024/05/16 09:49:17 by csakamot         ###   ########.fr       */
+/*   Updated: 2024/05/18 18:12:07 by csakamot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 #include <iostream>
 #include "AMateria.hpp"
 
-class IMateriaSource {
+class IMateriaSource
+{
 public:
   virtual ~IMateriaSource() {}
 

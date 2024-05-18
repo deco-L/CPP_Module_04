@@ -6,7 +6,7 @@
 /*   By: csakamot <csakamot@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 14:21:20 by csakamot          #+#    #+#             */
-/*   Updated: 2024/05/09 15:07:16 by csakamot         ###   ########.fr       */
+/*   Updated: 2024/05/18 18:10:14 by csakamot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 #include "Animal.hpp"
 
-class Cat : public Animal {
+class Cat : public Animal
+{
 public:
   Cat();
   Cat( const Cat& obj );

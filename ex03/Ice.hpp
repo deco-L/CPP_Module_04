@@ -6,7 +6,7 @@
 /*   By: csakamot <csakamot@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 14:21:20 by csakamot          #+#    #+#             */
-/*   Updated: 2024/05/18 12:54:32 by csakamot         ###   ########.fr       */
+/*   Updated: 2024/05/18 18:11:59 by csakamot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 #include "AMateria.hpp"
 
-class Ice : public AMateria {
+class Ice : public AMateria
+{
 private:
   std::string type;
 public:
