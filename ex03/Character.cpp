@@ -6,14 +6,14 @@
 /*   By: csakamot <csakamot@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 14:21:20 by csakamot          #+#    #+#             */
-/*   Updated: 2024/05/18 13:11:31 by csakamot         ###   ########.fr       */
+/*   Updated: 2024/05/18 14:55:00 by csakamot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
 Character::Character(void) :
-name("None") {
+name("None"), slot() {
   std::cout << "\e[1;92mCharacter default constructer called.\e[0m"
             << std::endl;
 }
