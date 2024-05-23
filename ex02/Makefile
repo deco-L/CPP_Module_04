@@ -6,12 +6,12 @@
 #    By: csakamot <csakamot@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/01 14:21:20 by csakamot          #+#    #+#              #
-#    Updated: 2024/05/23 13:04:58 by csakamot         ###   ########.fr        #
+#    Updated: 2024/05/23 13:14:34 by csakamot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 ##----Executable File Name-----##
-NAME		= Bureaucrat
+NAME		= Abstract_class
 ##-----------------------------##
 
 ##-----Directory Location------##
