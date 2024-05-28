@@ -6,7 +6,7 @@
 #    By: csakamot <csakamot@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/01 14:21:20 by csakamot          #+#    #+#              #
-#    Updated: 2024/05/23 13:01:32 by csakamot         ###   ########.fr        #
+#    Updated: 2024/05/27 12:57:37 by csakamot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,9 +15,9 @@ NAME			= Polymorphism
 ##-----------------------------##
 
 ##-----Directory Location------##
-SRCDIR			= ./
+SRCDIR			= ./src/
 
-INCDIR			= ./
+INCDIR			= ./include/
 
 OBJDIR			= objs/
 ##-----------------------------##
