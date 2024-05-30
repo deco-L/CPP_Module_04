@@ -6,7 +6,7 @@
 /*   By: csakamot <csakamot@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 14:21:20 by csakamot          #+#    #+#             */
-/*   Updated: 2024/05/30 23:34:13 by csakamot         ###   ########.fr       */
+/*   Updated: 2024/05/31 00:00:59 by csakamot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,19 @@
 AMateria::AMateria(void) :
 type("none") {
   std::cout << "\e[1;92mAMateria default constructor called.\e[0m"
+            << std::endl;
+}
+
+AMateria::AMateria(const std::string& type) :
+type(type) {
+  std::cout << "\e[1;92mAMateria constructor called.\e[0m"
+            << std::endl;
+}
+
+AMateria::AMateria(const AMateria& obj) :
+type("none") {
+  *this = obj;
+  std::cout << "\e[1;92mAMateria copy constructor called.\e[0m"
             << std::endl;
 }
 

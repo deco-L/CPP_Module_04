@@ -6,19 +6,20 @@
 /*   By: csakamot <csakamot@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 14:21:20 by csakamot          #+#    #+#             */
-/*   Updated: 2024/05/18 13:03:26 by csakamot         ###   ########.fr       */
+/*   Updated: 2024/05/31 00:52:47 by csakamot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
 
 Ice::Ice(void) :
-type("Ice") {
+AMateria("ice") {
   std::cout << "\e[1;92mIce default constructor called.\e[0m"
             << std::endl;
 }
 
-Ice::Ice(const Ice& obj) {
+Ice::Ice(const Ice& obj) :
+AMateria(obj) {
   *this = obj;
   std::cout << "\e[1;92mIce copy constructor called.\e[0m"
             << std::endl;
@@ -29,15 +30,15 @@ Ice::~Ice(void) {
             << std::endl;
 }
 
-AMateria* Ice::clone(void) const {
+Ice* Ice::clone(void) const {
   Ice *obj;
 
-  obj = new Ice();
+  obj = new Ice;
   return (obj);
 }
 
 void  Ice::use(ICharacter& target) {
-  std::cout << "Ice: \'* shoots an ice bolt at " << &target << " *\'"
+  std::cout << "Ice: \'* shoots an ice bolt at " << target.getName() << " *\'"
             << std::endl;
   return ;
 }

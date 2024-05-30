@@ -6,20 +6,20 @@
 /*   By: csakamot <csakamot@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 14:21:20 by csakamot          #+#    #+#             */
-/*   Updated: 2024/05/30 23:31:43 by csakamot         ###   ########.fr       */
+/*   Updated: 2024/05/31 00:52:13 by csakamot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
 
 Cure::Cure(void) :
-type("Cure") {
+AMateria("cure") {
   std::cout << "\e[1;92mCure default constructor called.\e[0m"
             << std::endl;
 }
 
 Cure::Cure(const Cure& obj) :
-type("Cure") {
+AMateria(obj) {
   *this = obj;
   std::cout << "\e[1;92mCure copy constructor called.\e[0m"
             << std::endl;
@@ -30,15 +30,15 @@ Cure::~Cure(void) {
             << std::endl;
 }
 
-AMateria* Cure::clone(void) const {
+Cure* Cure::clone(void) const {
   Cure  *obj;
 
-  obj = new Cure();
+  obj = new Cure;
   return (obj);
 }
 
 void  Cure::use(ICharacter& target) {
-  std::cout << "Cure: \"* heals " << &target << "'s wounds *\""
+  std::cout << "Cure: \"* heals " << target.getName() << "'s wounds *\""
             << std::endl;
   return ;
 }

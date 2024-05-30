@@ -6,14 +6,16 @@
 /*   By: csakamot <csakamot@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 14:21:20 by csakamot          #+#    #+#             */
-/*   Updated: 2024/05/30 23:25:48 by csakamot         ###   ########.fr       */
+/*   Updated: 2024/05/31 00:51:31 by csakamot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
 Character::Character(void) :
-name("None"), slot() {
+name("None") {
+  for (int i = 0; i < ARRAY_SIZE; i++)
+    this->slot[i] = 0;
   std::cout << "\e[1;92mCharacter default constructer called.\e[0m"
             << std::endl;
 }
@@ -21,7 +23,7 @@ name("None"), slot() {
 Character::Character(const std::string& name) :
 name(name) {
   for (int i = 0; i < ARRAY_SIZE; i++)
-    this->slot[i] = NULL;
+    this->slot[i] = 0;
   std::cout << "\e[1;92mCharacter constructer called.\e[0m"
             << std::endl;
 }
@@ -49,7 +51,7 @@ void  Character::equip(AMateria* obj) {
   int index = 0;
 
   for (index = 0; index < ARRAY_SIZE; index++) {
-    if (!this->slot[index]) {
+    if (this->slot[index] == 0) {
       this->slot[index] = obj;
       break ;
     }
@@ -60,10 +62,10 @@ void  Character::equip(AMateria* obj) {
 }
 
 void  Character::unequip(int idx) {
-  if (0 <= idx && idx <= 4 && this->slot[idx]) {
+  if (0 <= idx && idx <= 4 && (this->slot)[idx] == 0) {
     std::cout << "Material unequiqed." << std::endl;
-    this->slot[idx] = NULL;
-  } else if (0 <= idx && idx <= ARRAY_SIZE)
+    this->slot[idx] = 0;
+  } else if (0 <= idx && idx < ARRAY_SIZE)
     std::cout << "Error: Slots are already unequiped." << std::endl;
   else
     std::cout << "Error: Invalid index." << std::endl;
@@ -71,9 +73,9 @@ void  Character::unequip(int idx) {
 }
 
 void  Character::use(int idx, ICharacter& target) {
-  if (0 <= idx && idx <= ARRAY_SIZE && this->slot[idx])
+  if (0 <= idx && idx < ARRAY_SIZE && (this->slot)[idx] != 0)
     this->slot[idx]->use(target);
-  else if (0 <= idx && idx <= ARRAY_SIZE)
+  else if (0 <= idx && idx < ARRAY_SIZE)
     std::cout << "Error: Slot is empty." << std::endl;
   else
     std::cout << "Error: Invalid index." << std::endl;

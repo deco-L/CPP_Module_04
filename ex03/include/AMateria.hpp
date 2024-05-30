@@ -6,7 +6,7 @@
 /*   By: csakamot <csakamot@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 14:21:20 by csakamot          #+#    #+#             */
-/*   Updated: 2024/05/30 23:34:26 by csakamot         ###   ########.fr       */
+/*   Updated: 2024/05/31 00:01:40 by csakamot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ protected:
 
 public:
   AMateria( void );
+  AMateria( const std::string& type );
+  AMateria( const AMateria& obj );
   virtual ~AMateria() {}
 
   const std::string&  getType( void ) const;

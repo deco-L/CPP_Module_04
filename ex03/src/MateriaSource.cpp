@@ -6,7 +6,7 @@
 /*   By: csakamot <csakamot@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 14:21:20 by csakamot          #+#    #+#             */
-/*   Updated: 2024/05/30 23:05:27 by csakamot         ###   ########.fr       */
+/*   Updated: 2024/05/31 00:49:24 by csakamot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 MateriaSource::MateriaSource(void) {
   for (int i = 0; i < ARRAY_SIZE; i++)
-    this->slot[i] = NULL;
+    this->slot[i] = 0;
   std::cout << "\e[1;92mMateriaSource default constructer called.\e[0m"
             << std::endl;
 }
@@ -22,7 +22,7 @@ MateriaSource::MateriaSource(void) {
 MateriaSource::MateriaSource(const MateriaSource& obj) {
   *this = obj;
   for (int i = 0; i < ARRAY_SIZE; i++)
-    this->slot[i] = NULL;
+    this->slot[i] = 0;
   std::cout << "\e[1;92mMateriaSource copy constructer called.\e[0m"
             << std::endl;
 }
@@ -38,9 +38,9 @@ MateriaSource::~MateriaSource(void) {
 void  MateriaSource::learnMateria(AMateria* materia) {
   int index = 0;
 
-  while (index <= ARRAY_SIZE && !this->slot[index])
+  while (index < ARRAY_SIZE && this->slot[index] != 0)
     index++;
-  if (index > ARRAY_SIZE) {
+  if (index == ARRAY_SIZE) {
     std::cout << "Error: Full slot." << std::endl;
     return ;
   }
@@ -52,14 +52,17 @@ void  MateriaSource::learnMateria(AMateria* materia) {
 AMateria* MateriaSource::createMateria(const std::string& type) {
   int index = 0;
 
-  while (index <= ARRAY_SIZE && this->slot[index]->getType() != type)
+  while (index < ARRAY_SIZE && this->slot[index] &&
+                  this->slot[index]->getType() != type)
     index++;
-  if (index > ARRAY_SIZE) {
-    std::cout << "Error: " << type << "does not exist." << std::endl;
+  if (index == ARRAY_SIZE || this->slot[index] == 0) {
+    std::cout << "Error: " << type << " does not exist." << std::endl;
     return (NULL);
   }
-  std::cout << type << "created." << std::endl;
-  return (this->slot[index]->clone());
+  std::cout << type << " created." << std::endl;
+  AMateria *m;
+  m = ((this->slot)[index])->clone();
+  return (m);
 }
 
 MateriaSource&  MateriaSource::operator=(const MateriaSource& obj) {
