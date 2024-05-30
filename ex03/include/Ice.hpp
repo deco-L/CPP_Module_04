@@ -6,7 +6,7 @@
 /*   By: csakamot <csakamot@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 14:21:20 by csakamot          #+#    #+#             */
-/*   Updated: 2024/05/18 18:11:59 by csakamot         ###   ########.fr       */
+/*   Updated: 2024/05/30 23:29:11 by csakamot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ private:
 public:
   Ice( void );
   Ice( const Ice& obj );
-  ~Ice( void );
+  ~Ice();
 
   AMateria* clone( void ) const;
   void  use( ICharacter& target );

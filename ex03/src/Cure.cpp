@@ -6,7 +6,7 @@
 /*   By: csakamot <csakamot@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 14:21:20 by csakamot          #+#    #+#             */
-/*   Updated: 2024/05/18 13:03:32 by csakamot         ###   ########.fr       */
+/*   Updated: 2024/05/30 23:31:43 by csakamot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ type("Cure") {
             << std::endl;
 }
 
-Cure::Cure(const Cure& obj) {
+Cure::Cure(const Cure& obj) :
+type("Cure") {
   *this = obj;
   std::cout << "\e[1;92mCure copy constructor called.\e[0m"
             << std::endl;

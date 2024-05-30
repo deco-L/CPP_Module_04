@@ -6,7 +6,7 @@
 /*   By: csakamot <csakamot@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 14:21:20 by csakamot          #+#    #+#             */
-/*   Updated: 2024/05/18 18:11:50 by csakamot         ###   ########.fr       */
+/*   Updated: 2024/05/30 23:28:36 by csakamot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,16 @@ class Character : public ICharacter
 {
 private:
   std::string name;
-  AMateria    *slot[4];
+  AMateria    *slot[ARRAY_SIZE];
 
 public:
   Character( void );
   Character( const std::string& name );
   Character( const Character& obj );
-  ~Character( void );
+  ~Character();
 
   const std::string& getName( void ) const;
-  void  equip( AMateria* m );
+  void  equip( AMateria* obj );
   void  unequip( int idx );
   void  use( int idx, ICharacter& target );
 
