@@ -6,7 +6,7 @@
 /*   By: csakamot <csakamot@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 14:21:20 by csakamot          #+#    #+#             */
-/*   Updated: 2024/05/09 15:09:52 by csakamot         ###   ########.fr       */
+/*   Updated: 2024/06/08 15:25:12 by csakamot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,11 @@ int main(void) {
   }
   for (int j = 0; j < HERD; j++)
     delete herdAnimal[j];
+  draw_terminal_line();
+  Dog dog;
+  {
+    Dog tmp = dog;
+  }
   draw_terminal_line();
   return (EXIT_SUCCESS);
 }

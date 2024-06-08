@@ -6,7 +6,7 @@
 /*   By: csakamot <csakamot@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 14:21:20 by csakamot          #+#    #+#             */
-/*   Updated: 2024/05/09 14:43:45 by csakamot         ###   ########.fr       */
+/*   Updated: 2024/06/08 15:41:14 by csakamot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ Animal("dog") {
 
 Dog::Dog(const Dog& obj) :
 Animal("dog") {
-  this->brain = new Brain;
   *this = obj;
   std::cout << "\e[1;92mDog copy constructor called.\e[0m" << std::endl
             << "Animal type \e[1;96m" << type << "\e[0m"
@@ -43,7 +42,8 @@ void Dog::makeSound(void) const {
 Dog& Dog::operator=(const Dog& obj) {
   if (this != &obj) {
     this->type = obj.type;
-    this->brain = obj.brain;
+    this->brain = new Brain;
+    *this->brain = *obj.brain;
   }
   else
     std::cout << "\e[1;31mAnimal Error: "

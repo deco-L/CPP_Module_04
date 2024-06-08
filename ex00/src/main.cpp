@@ -6,7 +6,7 @@
 /*   By: csakamot <csakamot@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 14:21:20 by csakamot          #+#    #+#             */
-/*   Updated: 2024/05/08 12:05:25 by csakamot         ###   ########.fr       */
+/*   Updated: 2024/06/08 15:54:09 by csakamot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,23 +37,23 @@ static void draw_terminal_line() {
 
 int main(void) {
   draw_terminal_line();
-  const Animal* meta = new Animal();
   const Animal* j = new Dog();
   const Animal* i = new Cat();
-  std::cout << meta->getType() << " " << std::endl;
+  const Animal* tmp = new Animal();
   std::cout << j->getType() << " " << std::endl;
   std::cout << i->getType() << " " << std::endl;
+  std::cout << tmp->getType() << " " << std::endl;
   i->makeSound(); //will output the cat sound!
   j->makeSound();
-  meta->makeSound();
-  delete meta;
+  tmp->makeSound();
   delete j;
   delete i;
+  delete tmp;
   draw_terminal_line();
 
   draw_terminal_line();
   const WrongAnimal*  metameta = new WrongAnimal();
-  const WrongAnimal*  k = new WrongCat();
+  const WrongCat*  k = new WrongCat();
   std::cout << metameta->getType() << " " << std::endl;
   std::cout << k->getType() << " " << std::endl;
   metameta->makeSound();
